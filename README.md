@@ -16,8 +16,12 @@ The `dispLEDTask` is configured in the `dispLED` function, which manages the two
 ### 4. `dispUARTTask`
 The `dispUARTTask` is configured in the `dispUART` function to display information on the serial monitor using UART communication. Initially, this task displays the main menu using `Menu_Display`. Then, it monitors user input via UART (using `HAL_UART_Receive`) and reads the characters sent to determine the selected command. If the user chooses option 1 (by sending the character '1'), this task will display the ADC value (`x_val`) obtained from `getADC` on the serial monitor. If option 2 is chosen (by sending the character '2'), the task will redisplay the menu. Additionally, if the button (monitored by `pickButton`) is pressed, the `dispUART` task will display the message "Button1 pressed" on the serial monitor.
 
-## Diagram
+## Relationship of Each Task
 ![diagram](https://github.com/user-attachments/assets/617a1c90-4bbc-4c8a-89c1-2543794538af)
+There are several global variables that serve as communication media between different tasks. One of the main variables is x_val, which contains the ADC value read by the getADC task. Each time this task is run, the ADC conversion result will be updated in x_val. This variable is then used by the dispLED task to determine the status of the LED connected to the microcontroller. If the x_val value is within a certain range, this task will change the LED status to ON or OFF, providing visual feedback in the form of a reaction on the LED based on the readings performed by the getADC task. In addition, there is a variable button1_pressed, which is managed by the pickButton task to detect button presses. When the button is detected as pressed, this variable will be set to 1, which then serves as a signal for the dispUART task to display information on the serial monitor. The dispUART task reads the x_val value to display the ADC value and respond to the button press status. If button1_pressed is 1, this task will display the message "Button1 pressed" and then reset its value to 0.
+
+## Circuit Form
+![rangkaian task2 _1](https://github.com/user-attachments/assets/c2cd3c36-fb53-4f18-9ab8-b967d644f520)
 
 ## Demo
 [Video Demo](https://github.com/user-attachments/assets/34532c0e-67eb-49d9-9f2c-41c9011d42c2)
