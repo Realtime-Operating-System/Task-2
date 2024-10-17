@@ -20,7 +20,7 @@ The `dispUARTTask` is configured in the `dispUART` function to display informati
 ![Task Diagram](diagram.jpeg)
 
 ## Demo
-[Video Demo](demo.mp4)
+![Video Demo](https://github.com/user-attachments/assets/4104e2a2-b2be-41cd-9762-dd3282ddc70a)
 
 ## Requirements
 - STM32CubeIDE
