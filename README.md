@@ -16,9 +16,6 @@ The `dispLEDTask` is configured in the `dispLED` function, which manages the two
 ### 4. `dispUARTTask`
 The `dispUARTTask` is configured in the `dispUART` function to display information on the serial monitor using UART communication. Initially, this task displays the main menu using `Menu_Display`. Then, it monitors user input via UART (using `HAL_UART_Receive`) and reads the characters sent to determine the selected command. If the user chooses option 1 (by sending the character '1'), this task will display the ADC value (`x_val`) obtained from `getADC` on the serial monitor. If option 2 is chosen (by sending the character '2'), the task will redisplay the menu. Additionally, if the button (monitored by `pickButton`) is pressed, the `dispUART` task will display the message "Button1 pressed" on the serial monitor.
 
-##Task Diagram
-!/Users/juliokhiyar/Downloads/diagram.jpeg
-
 ## Requirements
 - STM32CubeIDE
 - FreeRTOS library
