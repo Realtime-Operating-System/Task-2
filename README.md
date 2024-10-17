@@ -17,7 +17,7 @@ The `dispLEDTask` is configured in the `dispLED` function, which manages the two
 The `dispUARTTask` is configured in the `dispUART` function to display information on the serial monitor using UART communication. Initially, this task displays the main menu using `Menu_Display`. Then, it monitors user input via UART (using `HAL_UART_Receive`) and reads the characters sent to determine the selected command. If the user chooses option 1 (by sending the character '1'), this task will display the ADC value (`x_val`) obtained from `getADC` on the serial monitor. If option 2 is chosen (by sending the character '2'), the task will redisplay the menu. Additionally, if the button (monitored by `pickButton`) is pressed, the `dispUART` task will display the message "Button1 pressed" on the serial monitor.
 
 ## Diagram
-![Task Diagram](diagram.jpeg)
+![diagram](https://github.com/user-attachments/assets/617a1c90-4bbc-4c8a-89c1-2543794538af)
 
 ## Demo
 ![Video Demo](https://github.com/user-attachments/assets/4104e2a2-b2be-41cd-9762-dd3282ddc70a)
