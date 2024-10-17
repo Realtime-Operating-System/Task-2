@@ -19,6 +19,9 @@ The `dispUARTTask` is configured in the `dispUART` function to display informati
 ## Diagram
 ![Task Diagram](diagram.jpeg)
 
+## Demo
+![Video Demo](demo.mp4)
+
 ## Requirements
 - STM32CubeIDE
 - FreeRTOS library
